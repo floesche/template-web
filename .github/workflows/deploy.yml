@@ -39,8 +39,16 @@ jobs:
         with:
           pixi-version: v0.66.0
 
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-${{ hashFiles('**/*.qmd') }}
+          restore-keys: quarto-freeze-
+
       - name: Render site
-        run: pixi run render
+        timeout-minutes: 30
+        run: pixi run render -- --log-level debug
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
