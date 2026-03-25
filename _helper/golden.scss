@@ -1,0 +1,154 @@
+/*-- scss:defaults --*/
+
+// ── Color Palette ────────────────────────────────────────────────────────────
+// Golden Summer Fields — https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373
+
+$lab-primary:   #ccd5ae;  // sage green     – main brand
+$lab-secondary: #d4a373;  // caramel tan    – warm accent
+$lab-accent:    #d4a373;  // caramel tan    – interactive accent
+$lab-highlight: #faedcd;  // pale sand      – light accent
+$lab-bg:        #fefae0;  // warm cream     – page background
+
+// ── Bootstrap theme color overrides ──────────────────────────────────────────
+
+$primary:   $lab-primary;
+$secondary: $lab-secondary;
+$success:   $lab-primary;
+$info:      $lab-highlight;
+$warning:   $lab-accent;
+$light:     $lab-bg;
+$body-bg:   $lab-bg;
+
+// ── Typography ───────────────────────────────────────────────────────────────
+
+$headings-color:   darken($lab-primary, 38%);
+$link-color:       darken($lab-accent, 22%);
+$link-hover-color: darken($lab-accent, 36%);
+
+// ── Navigation ───────────────────────────────────────────────────────────────
+
+$navbar-bg: darken($lab-primary, 36%);
+$navbar-fg: mix(white, $navbar-bg, 85%);
+$navbar-hl: $lab-highlight;
+
+// ── Sidebar ──────────────────────────────────────────────────────────────────
+
+$sidebar-bg: darken($lab-bg, 3%);
+$sidebar-fg: darken($lab-primary, 40%);
+
+// ── Table of Contents ────────────────────────────────────────────────────────
+
+$toc-color:        darken($lab-primary, 32%);
+$toc-active-color: darken($lab-primary, 40%);
+
+// ── Inline code ──────────────────────────────────────────────────────────────
+
+$code-color: darken($lab-primary, 34%);
+
+/*-- scss:rules --*/
+
+// ── Stepped heading colors ────────────────────────────────────────────────────
+h2,
+.h2 {
+    color: darken($lab-primary, 36%);
+}
+h3,
+.h3 {
+    color: darken($lab-accent, 20%);
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+.navbar {
+    background-color: $navbar-bg !important;
+    border-bottom: 3px solid $lab-accent;
+}
+
+// ── Sidebar active + section headers ─────────────────────────────────────────
+.sidebar-navigation .active > a,
+.sidebar-navigation a.active {
+    color: darken($lab-primary, 40%) !important;
+    font-weight: 600;
+    border-left: 3px solid darken($lab-primary, 32%);
+    padding-left: calc(var(--bs-nav-link-padding-x, 1rem) - 3px);
+}
+
+.sidebar-navigation .sidebar-section .sidebar-section-item {
+    > .menu-text,
+    > a {
+        color: darken($lab-primary, 36%);
+        font-weight: 600;
+    }
+}
+
+.margin-sidebar {
+    background-color: darken($lab-bg, 3%);
+    padding: 0.5em;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+#TOC a.active,
+nav[role="doc-toc"] a.active {
+    color: darken($lab-primary, 36%);
+    font-weight: 600;
+}
+
+// ── Inline code ──────────────────────────────────────────────────────────────
+p code,
+li code,
+td code,
+th code {
+    color: darken($lab-primary, 36%);
+    background-color: rgba($lab-primary, 0.20);
+    border-radius: 3px;
+}
+
+// ── Code blocks ──────────────────────────────────────────────────────────────
+pre.sourceCode {
+    border-left: 3px solid rgba($lab-primary, 0.42);
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+thead th {
+    background-color: rgba($lab-primary, 0.20);
+}
+
+// ── Callout tweaks ───────────────────────────────────────────────────────────
+div.callout-caution.callout {
+    border-left-color: $lab-accent;
+    > .callout-header {
+        background-color: rgba($lab-accent, 0.18);
+        color: darken($lab-accent, 25%);
+    }
+}
+
+div.callout-note.callout {
+    > .callout-header {
+        background-color: rgba($lab-primary, 0.15);
+    }
+}
+
+div.callout-tip.callout {
+    > .callout-header {
+        background-color: rgba($lab-secondary, 0.15);
+    }
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+.nav-footer {
+    background-color: rgba($lab-primary, 0.08);
+    border-top: 1px solid rgba($lab-primary, 0.22);
+}
+
+// ── Back-to-top button ───────────────────────────────────────────────────────
+#back-to-top {
+    color: darken($lab-primary, 34%);
+    &:hover {
+        color: darken($lab-accent, 22%);
+    }
+}
+
+// ── Buttons (primary) ────────────────────────────────────────────────────────
+.btn-primary:hover,
+.btn-primary:focus {
+    border-bottom-color: $lab-highlight;
+}

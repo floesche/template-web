@@ -1,0 +1,154 @@
+/*-- scss:defaults --*/
+
+// ── Color Palette ────────────────────────────────────────────────────────────
+// Summer Dream — https://coolors.co/palette/0081a7-00afb9-fdfcdc-fed9b7-f07167
+
+$lab-primary:   #0081a7;  // deep teal-blue  – main brand
+$lab-secondary: #00afb9;  // bright cyan     – cool accent
+$lab-accent:    #f07167;  // warm coral      – warm accent
+$lab-highlight: #fed9b7;  // soft peach      – light accent
+$lab-bg:        #fdfcdc;  // pale cream      – page background
+
+// ── Bootstrap theme color overrides ──────────────────────────────────────────
+
+$primary:   $lab-primary;
+$secondary: $lab-secondary;
+$success:   $lab-secondary;
+$info:      $lab-highlight;
+$warning:   $lab-accent;
+$light:     $lab-bg;
+$body-bg:   $lab-bg;
+
+// ── Typography ───────────────────────────────────────────────────────────────
+
+$headings-color:   $lab-primary;
+$link-color:       $lab-accent;
+$link-hover-color: darken($lab-accent, 12%);
+
+// ── Navigation ───────────────────────────────────────────────────────────────
+
+$navbar-bg: $lab-primary;
+$navbar-fg: mix(white, $lab-primary, 85%);
+$navbar-hl: $lab-highlight;
+
+// ── Sidebar ──────────────────────────────────────────────────────────────────
+
+$sidebar-bg: darken($lab-bg, 3%);
+$sidebar-fg: darken($lab-primary, 8%);
+
+// ── Table of Contents ────────────────────────────────────────────────────────
+
+$toc-color:        mix(black, $lab-primary, 25%);
+$toc-active-color: $lab-primary;
+
+// ── Inline code ──────────────────────────────────────────────────────────────
+
+$code-color: $lab-secondary;
+
+/*-- scss:rules --*/
+
+// ── Stepped heading colors ────────────────────────────────────────────────────
+h2,
+.h2 {
+    color: darken($lab-primary, 8%);
+}
+h3,
+.h3 {
+    color: $lab-secondary;
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+.navbar {
+    background-color: $navbar-bg !important;
+    border-bottom: 3px solid $lab-secondary;
+}
+
+// ── Sidebar active + section headers ─────────────────────────────────────────
+.sidebar-navigation .active > a,
+.sidebar-navigation a.active {
+    color: $lab-primary !important;
+    font-weight: 600;
+    border-left: 3px solid $lab-primary;
+    padding-left: calc(var(--bs-nav-link-padding-x, 1rem) - 3px);
+}
+
+.sidebar-navigation .sidebar-section .sidebar-section-item {
+    > .menu-text,
+    > a {
+        color: $lab-primary;
+        font-weight: 600;
+    }
+}
+
+.margin-sidebar {
+    background-color: darken($lab-bg, 3%);
+    padding: 0.5em;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+#TOC a.active,
+nav[role="doc-toc"] a.active {
+    color: $lab-primary;
+    font-weight: 600;
+}
+
+// ── Inline code ──────────────────────────────────────────────────────────────
+p code,
+li code,
+td code,
+th code {
+    color: $lab-primary;
+    background-color: rgba($lab-secondary, 0.15);
+    border-radius: 3px;
+}
+
+// ── Code blocks ──────────────────────────────────────────────────────────────
+pre.sourceCode {
+    border-left: 3px solid rgba($lab-secondary, 0.40);
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+thead th {
+    background-color: rgba($lab-secondary, 0.15);
+}
+
+// ── Callout tweaks ───────────────────────────────────────────────────────────
+div.callout-caution.callout {
+    border-left-color: $lab-accent;
+    > .callout-header {
+        background-color: rgba($lab-accent, 0.14);
+        color: darken($lab-accent, 18%);
+    }
+}
+
+div.callout-note.callout {
+    > .callout-header {
+        background-color: rgba($lab-primary, 0.10);
+    }
+}
+
+div.callout-tip.callout {
+    > .callout-header {
+        background-color: rgba($lab-secondary, 0.12);
+    }
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+.nav-footer {
+    background-color: rgba($lab-primary, 0.07);
+    border-top: 1px solid rgba($lab-primary, 0.22);
+}
+
+// ── Back-to-top button ───────────────────────────────────────────────────────
+#back-to-top {
+    color: $lab-primary;
+    &:hover {
+        color: $lab-accent;
+    }
+}
+
+// ── Buttons (primary) ────────────────────────────────────────────────────────
+.btn-primary:hover,
+.btn-primary:focus {
+    border-bottom-color: $lab-highlight;
+}

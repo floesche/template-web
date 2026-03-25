@@ -122,29 +122,3 @@ pixi add pandas seaborn matplotlib
 ```
 
 All dependencies are recorded in `pixi.toml` and pinned in `pixi.lock`.
-
-
-
-## Colors
-
-Currently, the color schemes are 
-- Olive Garden Feast: https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25 
-- Pastel Dreamland Adventure: https://coolors.co/palette/cdb4db-ffc8dd-ffafcc-bde0fe-a2d2ff 
-- Golden Summer Fields: https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373
-- Fiery Ocean: https://coolors.co/palette/780000-c1121f-fdf0d5-003049-669bbc 
-- Meadow Green: https://coolors.co/palette/d9ed92-b5e48c-99d98c-76c893-52b69a-34a0a4-168aad-1a759f-1e6091-184e77 
-- Refreshing Summer Fun: https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500
-- Neutral Harmony Bliss: https://coolors.co/palette/f4f1de-e07a5f-3d405b-81b29a-f2cc8f 
-- Dark Sunset: https://coolors.co/palette/335c67-fff3b0-e09f3e-9e2a2b-540b0e 
-- Vibrant Color Fiesta: https://coolors.co/palette/ffbe0b-fb5607-ff006e-8338ec-3a86ff
-- Sunny Beach Day: https://coolors.co/palette/264653-2a9d8f-e9c46a-f4a261-e76f51 
-- Autumn Harvest: https://coolors.co/palette/6f1d1b-bb9457-432818-99582a-ffe6a7 
-- Summer Dream: https://coolors.co/palette/0081a7-00afb9-fdfcdc-fed9b7-f07167
-- Black & Gold Elegance: https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff 
-- Midnight Sky: https://coolors.co/palette/27187e-758bfd-aeb8fe-f1f2f6-ff8600 
-- Earthy Tones: https://coolors.co/palette/a3a380-d6ce93-efebce-d8a48f-bb8588
-- Soft Lavender: https://coolors.co/palette/22223b-4a4e69-9a8c98-c9ada7-f2e9e4 
-- Fresh Greens: https://coolors.co/palette/386641-6a994e-a7c957-f2e8cf-bc4749 
-- Pastel Rainbow Fantasy: https://coolors.co/palette/ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-a0c4ff-bdb2ff-ffc6ff-fffffc
-- Blue Serenity: https://coolors.co/palette/edf2fb-e2eafc-d7e3fc-ccdbfd-c1d3fe-b6ccfe-abc4ff 
-- Warm Neutral Tones: https://coolors.co/palette/ecf8f8-eee4e1-e7d8c9-e6beae-b2967d

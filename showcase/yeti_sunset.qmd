@@ -1,0 +1,36 @@
+---
+title: "Quarto Feature Showcase"
+subtitle: "A comprehensive demonstration of Quarto authoring features"
+author:
+  - name: Claire Voisin
+    corresponding: true
+    affiliations:
+      - Corane Farm Research
+  - name: Yemisi Adeyinka
+    affiliations:
+      - Corane Farm Research
+date: 2026-03-16
+abstract: |
+  This page demonstrates the full range of Quarto features available in this
+  template. Each section showcases a category of features using the features
+  themselves. Use this as a reference when writing your own content.
+  This showcase uses the [Yeti](https://bootswatch.com/yeti/) Bootswatch theme with
+  the [Dark Sunset color palette](https://coolors.co/palette/335c67-fff3b0-e09f3e-9e2a2b-540b0e).
+bibliography: ../references.bib
+number-sections: true
+code-annotations: hover
+lightbox: true
+format:
+  html:
+    theme: [yeti, ../_helper/sunset.scss]
+    citations-hover: true
+    footnotes-hover: true
+    crossrefs-hover: true
+    code-copy: hover
+  typst:
+    columns: 1
+  docx: default
+  gfm: default
+---
+
+{{< include _showcase-body.qmd >}}

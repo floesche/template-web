@@ -2,16 +2,15 @@
 title: "Quarto Feature Showcase"
 subtitle: "A comprehensive demonstration of Quarto authoring features"
 author:
-  - name: Jane Smith
+  - name: Chioma Thornton
     orcid: 0000-0000-0000-0000
-    email: pi@university.edu
+    email: thornton@coranefarm.org
     corresponding: true
     affiliations:
-      - University X
-      - Department of Neuroscience
-  - name: Alex Johnson
+      - Corane Farm Research
+  - name: Yemisi Adeyinka
     affiliations:
-      - University X
+      - Corane Farm Research
 date: 2026-03-16
 abstract: |
   This page demonstrates the full range of Quarto features available in this

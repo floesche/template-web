@@ -2,7 +2,7 @@
 title: "Quarto Feature Showcase"
 subtitle: "A comprehensive demonstration of Quarto authoring features"
 author:
-  - name: Emeka Thornton
+  - name: Chioma Thornton
     orcid: 0000-0000-0000-0000
     email: thornton@coranefarm.org
     corresponding: true

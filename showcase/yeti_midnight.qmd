@@ -1,0 +1,39 @@
+---
+title: "Quarto Feature Showcase"
+subtitle: "A comprehensive demonstration of Quarto authoring features"
+author:
+  - name: Fatima Al-Rashidi
+    corresponding: true
+    affiliations:
+      - Corane Farm Research
+  - name: Lucas Moreira
+    affiliations:
+      - Corane Farm Research
+  - name: Søren Nielsen
+    affiliations:
+      - Corane Farm Research
+date: 2026-03-16
+abstract: |
+  This page demonstrates the full range of Quarto features available in this
+  template. Each section showcases a category of features using the features
+  themselves. Use this as a reference when writing your own content.
+  This showcase uses the [Yeti](https://bootswatch.com/yeti/) Bootswatch theme with
+  the [Midnight Sky color palette](https://coolors.co/palette/27187e-758bfd-aeb8fe-f1f2f6-ff8600).
+bibliography: ../references.bib
+number-sections: true
+code-annotations: hover
+lightbox: true
+format:
+  html:
+    theme: [yeti, ../_helper/midnight.scss]
+    citations-hover: true
+    footnotes-hover: true
+    crossrefs-hover: true
+    code-copy: hover
+  typst:
+    columns: 1
+  docx: default
+  gfm: default
+---
+
+{{< include _showcase-body.qmd >}}

@@ -2,13 +2,11 @@
 title: "Quarto Feature Showcase"
 subtitle: "A comprehensive demonstration of Quarto authoring features"
 author:
-  - name: Emeka Thornton
-    orcid: 0000-0000-0000-0000
-    email: thornton@coranefarm.org
+  - name: Claire Voisin
     corresponding: true
     affiliations:
       - Corane Farm Research
-  - name: Fatima Al-Rashidi
+  - name: Yemisi Adeyinka
     affiliations:
       - Corane Farm Research
 date: 2026-03-16

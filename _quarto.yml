@@ -29,8 +29,7 @@ website:
         text: Showcase
     right:
       - icon: github
-        # TODO: Update with your repository URL
-        href: https://github.com/yourusername/your-repo-name
+        href: https://github.com/floesche/template-web
   sidebar:
     - id: research
       title: "Research"
@@ -122,8 +121,42 @@ website:
               href: showcase/yeti_elegance.qmd
             - text: "Spring Garden"
               href: showcase/yeti_spring.qmd
-            - text: "Soft Lavender"
+            - text: "Vivid Lavender"
               href: showcase/yeti_lavender.qmd
+            - text: "Pastel Dreamland Adventure"
+              href: showcase/yeti_pastel.qmd
+            - text: "Golden Summer Fields"
+              href: showcase/yeti_golden.qmd
+            - text: "Meadow Green"
+              href: showcase/yeti_meadow.qmd
+            - text: "Refreshing Summer Fun"
+              href: showcase/yeti_summerfun.qmd
+            - text: "Neutral Harmony Bliss"
+              href: showcase/yeti_harmony.qmd
+            - text: "Dark Sunset"
+              href: showcase/yeti_sunset.qmd
+            - text: "Vibrant Color Fiesta"
+              href: showcase/yeti_fiesta.qmd
+            - text: "Sunny Beach Day"
+              href: showcase/yeti_beach.qmd
+            - text: "Autumn Harvest"
+              href: showcase/yeti_autumn.qmd
+            - text: "Summer Dream"
+              href: showcase/yeti_dream.qmd
+            - text: "Midnight Sky"
+              href: showcase/yeti_midnight.qmd
+            - text: "Earthy Tones"
+              href: showcase/yeti_earthy.qmd
+            - text: "Soft Lavender"
+              href: showcase/yeti_softlavender.qmd
+            - text: "Fresh Greens"
+              href: showcase/yeti_freshgreens.qmd
+            - text: "Pastel Rainbow Fantasy"
+              href: showcase/yeti_rainbow.qmd
+            - text: "Blue Serenity"
+              href: showcase/yeti_serenity.qmd
+            - text: "Warm Neutral Tones"
+              href: showcase/yeti_warmtones.qmd
   page-footer:
     center: |
       This is a template website: all persons, institutions, and projects are fictitious, and any resemblance to actual persons or entities is entirely coincidental.
