@@ -1,0 +1,56 @@
+---
+title: "ConnectTrack: Pipeline Design"
+author:
+  - name: Emeka Thornton
+    orcid: 0000-0000-0000-0000
+    email: thornton@coranefarm.org
+    corresponding: true
+    affiliations:
+      - Corane Farm Research
+  - name: Fatima Al-Rashidi
+    affiliations:
+      - Corane Farm Research
+date: 2026-01-15
+abstract: |
+  This document describes the design rationale and specifications for ConnectTrack,
+  a pipeline for reconstructing and tracking synaptic connectivity across
+  developmental time points using serial FIB-SEM and automated segmentation.
+---
+
+## Introduction
+
+ConnectTrack aims to enable longitudinal connectomic analysis of sensorimotor circuits during postnatal development. This document covers the design decisions made during development of the acquisition and reconstruction pipeline.
+
+## Design overview
+
+The pipeline has three stages: (1) tissue preparation and FIB-SEM acquisition, (2) automated neuron segmentation and synapse detection, and (3) connectivity graph construction and temporal alignment across developmental ages.
+
+::: {.callout-note}
+## Design files
+CAD files, microscope configuration scripts, and segmentation model weights are available at [link to repository or file share].
+:::
+
+## Components
+
+| Component | Specification | Supplier | Part number |
+|-----------|--------------|----------|-------------|
+| FIB-SEM system | 4 nm isotropic voxels | Zeiss | Crossbeam 550 |
+| Vibratome | 50 µm sections | Leica | VT1200S |
+| GPU cluster | 8× A100, 80 GB | NVIDIA | DGX A100 |
+| Storage | 2 PB object storage | Corane Farm Research IT | — |
+
+: Key components used in the ConnectTrack pipeline. {#tbl-components}
+
+## Design considerations
+
+### Trade-off 1: voxel size vs. volume
+
+Higher resolution (4 nm voxels) fully resolves thin axons and small synapses but limits the acquirable volume per session to ~50 × 50 × 50 µm³. We accept this trade-off because the sensorimotor target regions are compact and the synaptic ultrastructure detail is essential for identifying synapse type and maturation state.
+
+### Trade-off 2: automated vs. proofreading-assisted segmentation
+
+Fully automated segmentation at scale is necessary given data volumes, but introduces merge and split errors. We apply a confidence-weighted proofreading strategy, prioritizing manual correction for edges with low affinity scores rather than exhaustive review, achieving >95% synapse detection recall at roughly one-tenth the proofreading cost of full manual reconstruction.
+
+## Version
+
+Document version: {{< meta git-version >}}

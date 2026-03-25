@@ -1,0 +1,37 @@
+---
+title: "Quarto Feature Showcase"
+subtitle: "A comprehensive demonstration of Quarto authoring features"
+author:
+  - name: Jane Smith
+    orcid: 0000-0000-0000-0000
+    email: pi@university.edu
+    corresponding: true
+    affiliations:
+      - University X
+      - Department of Neuroscience
+  - name: Alex Johnson
+    affiliations:
+      - University X
+date: 2026-03-16
+abstract: |
+  This page demonstrates the full range of Quarto features available in this
+  template. Each section showcases a category of features using the features
+  themselves. Use this as a reference when writing your own content.
+bibliography: ../references.bib
+number-sections: true
+code-annotations: hover
+lightbox: true
+format:
+  html:
+    theme: [yeti, ../_helper/emphasis.scss]
+    citations-hover: true
+    footnotes-hover: true
+    crossrefs-hover: true
+    code-copy: hover
+  typst:
+    columns: 1
+  docx: default
+  gfm: default
+---
+
+{{< include _showcase-body.qmd >}}

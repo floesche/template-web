@@ -1,0 +1,31 @@
+---
+title: Thornton Lab
+format:
+    html:
+        format-links: false
+---
+
+Welcome to the **Thornton Lab** at Corane Farm Research. We study the developmental assembly of sensorimotor circuits and activity-dependent synaptic connectivity, combining electron microscopy connectomics with in vivo physiology and computation.
+
+## Research interests
+
+- Developmental wiring of sensorimotor circuits
+- Activity-dependent synaptogenesis and circuit refinement
+- Electron microscopy connectomics at synaptic resolution
+- Computational models of circuit assembly rules
+
+## Recent news
+
+| Date | Event |
+|------|-------|
+| 2026-03-01 | ConnectTrack paper accepted at *Nature Neuroscience* |
+| 2026-01-10 | Søren Nielsen joins the lab as a research specialist |
+| 2025-11-15 | Dr. Ingrid Solberg moves to University of Oslo as Assistant Professor |
+| 2025-09-05 | SynaptogenEM poster presented at SfN Annual Meeting |
+| 2025-06-20 | DevCircuit preprint posted on bioRxiv |
+
+## Contact
+
+- **Email:** [thornton@coranefarm.org](mailto:thornton@coranefarm.org)
+- **Office:** Corane Farm Research, Building B, Room 212
+- **Address:** 19700 Double Lane, Selden, MD 20147

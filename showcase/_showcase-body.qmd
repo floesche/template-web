@@ -1,0 +1,636 @@
+
+## Text formatting {#sec-text}
+
+Standard Markdown formatting: *italic*, **bold**, ***bold italic***, ~~strikethrough~~, `inline code`.
+
+Superscript and subscript: H~2~O is water. 2^10^ is 1024.
+
+[Small caps text]{.smallcaps} and [underlined text]{.underline} and [highlighted text]{.mark}.
+
+A keyboard shortcut: {{< kbd Ctrl-Shift-P >}}
+
+---
+
+## Callout blocks {#sec-callouts}
+
+Quarto provides five callout types with three appearance styles.
+
+### Default appearance
+
+::: {.callout-note}
+## Note
+Use notes for supplementary information that adds context.
+:::
+
+::: {.callout-tip}
+## Tip
+Use tips for best practices and helpful suggestions.
+:::
+
+::: {.callout-warning}
+## Warning
+Use warnings for actions that could cause problems if ignored.
+:::
+
+::: {.callout-caution}
+## Caution
+Use caution for irreversible actions or potential data loss.
+:::
+
+::: {.callout-important}
+## Important
+Use important for critical information that must not be missed.
+:::
+
+### Collapsible callout
+
+::: {.callout-tip collapse="true"}
+## Click to expand
+This content is hidden by default. Useful for long examples, solutions, or supplementary details that would otherwise interrupt the reading flow.
+:::
+
+### Simple and minimal appearance
+
+::: {.callout-note appearance="simple"}
+## Simple appearance
+A lighter callout style without the colored background header.
+:::
+
+::: {.callout-note appearance="minimal"}
+## Minimal appearance
+The most lightweight callout — just a colored left border.
+:::
+
+### No icon
+
+::: {.callout-tip icon=false}
+## Without icon
+Callouts can suppress their icon for a cleaner look.
+:::
+
+---
+
+## Code blocks {#sec-code}
+
+### Syntax highlighting
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def gaussian(x, mu=0, sigma=1):
+    """Compute the Gaussian probability density function."""
+    return (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)
+
+x = np.linspace(-4, 4, 200)
+plt.plot(x, gaussian(x), label="μ=0, σ=1")
+plt.plot(x, gaussian(x, mu=1, sigma=0.5), label="μ=1, σ=0.5")
+plt.legend()
+plt.title("Gaussian Distributions")
+plt.show()
+```
+
+### Code with filename
+
+```{.python filename="analysis.py"}
+import pandas as pd
+
+df = pd.read_csv("data/experiment_001.csv")
+summary = df.describe()
+print(summary)
+```
+
+### Line numbers and highlighting
+
+```{.python code-line-numbers="3-5"}
+import numpy as np
+
+data = np.loadtxt("measurements.csv", delimiter=",")
+mean_val = np.mean(data, axis=0)
+std_val = np.std(data, axis=0)
+
+print(f"Mean: {mean_val}, Std: {std_val}")
+```
+
+Lines 3–5 are highlighted above. Line numbers appear on all lines.
+
+### Code annotations
+
+```python
+import pandas as pd                        # <1>
+
+df = pd.read_csv("data.csv")              # <2>
+df = df.dropna(subset=["measurement"])     # <3>
+result = df.groupby("condition").mean()    # <4>
+```
+1. Import the pandas library for data manipulation.
+2. Load experimental data from a CSV file.
+3. Remove rows with missing measurement values.
+4. Compute mean per experimental condition.
+
+---
+
+## Cross-references {#sec-crossrefs}
+
+Quarto can cross-reference figures, tables, equations, sections, code listings, and theorems.
+
+### Section references
+
+See @sec-callouts for callout examples, @sec-code for code blocks, or @sec-equations for math.
+
+### Figure references
+
+See @fig-placeholder below.
+
+![A placeholder figure demonstrating cross-referencing.](/images/placeholder-wide.svg){#fig-placeholder}
+
+### Table references
+
+See @tbl-elements for a cross-referenced table.
+
+| Element | Symbol | Atomic number |
+|---------|:------:|:-------------:|
+| Hydrogen  | H  | 1 |
+| Carbon    | C  | 6 |
+| Nitrogen  | N  | 7 |
+| Oxygen    | O  | 8 |
+| Phosphorus| P  | 15 |
+
+: Selected elements relevant to biology. {#tbl-elements}
+
+### Equation references
+
+The Nernst equation (@eq-nernst) describes the equilibrium potential of an ion:
+
+$$
+E = \frac{RT}{zF} \ln \frac{[\text{ion}]_{\text{outside}}}{[\text{ion}]_{\text{inside}}}
+$$ {#eq-nernst}
+
+### Code listing references
+
+See @lst-query for an example SQL query.
+
+```{#lst-query .sql lst-cap="Example database query for experimental sessions."}
+SELECT session_id, subject, date, trial_count
+FROM experiments
+WHERE condition = 'control'
+ORDER BY date DESC;
+```
+
+---
+
+## Figures {#sec-figures}
+
+### Basic figure with sizing
+
+![A smaller placeholder image (300px wide).](/images/placeholder-small.svg){width=300 fig-align="center"}
+
+### Figure alignment
+
+::: {layout="[1,1,1]"}
+![Left](/images/placeholder-left.svg){fig-align="left"}
+
+![Center](/images/placeholder-center.svg){fig-align="center"}
+
+![Right](/images/placeholder-right.svg){fig-align="right"}
+:::
+
+### Subfigures with layout
+
+::: {#fig-panels layout-ncol=2}
+![Panel A: Control condition](/images/placeholder-a.svg){#fig-panel-a}
+
+![Panel B: Experimental condition](/images/placeholder-b.svg){#fig-panel-b}
+
+Comparison of control and experimental conditions. See @fig-panel-a for the control.
+:::
+
+### Custom layout with spacing
+
+::: {layout="[[1,1], [1]]"}
+![Top left](/images/placeholder-1.svg)
+
+![Top right](/images/placeholder-2.svg)
+
+![Full width bottom](/images/placeholder-3.svg)
+:::
+
+### Lightbox
+
+Click the image below to view it enlarged (HTML only).
+
+![Click to enlarge this image.](/images/placeholder-large.svg){.lightbox fig-align="center" width=500}
+
+---
+
+## Tables {#sec-tables}
+
+### Pipe table with alignment
+
+| Left-aligned | Centered | Right-aligned | Default |
+|:-------------|:--------:|--------------:|---------|
+| Row 1        | Data     | 3.14          | Alpha   |
+| Row 2        | Data     | 2.72          | Beta    |
+| Row 3        | Data     | 1.62          | Gamma   |
+
+: Demonstration of column alignment. {#tbl-alignment}
+
+### Grid table
+
+Grid tables support block-level content in cells (lists, paragraphs, code).
+
++---------------+-------------------+------------------+
+| Method        | Advantages        | Disadvantages    |
++===============+===================+==================+
+| Two-photon    | - Deep imaging    | - Expensive      |
+|               | - Less phototoxic | - Slow scan rate |
++---------------+-------------------+------------------+
+| Confocal      | - Good resolution | - Phototoxic     |
+|               | - Common          | - Limited depth  |
++---------------+-------------------+------------------+
+| Widefield     | - Fast            | - Low contrast   |
+|               | - Simple setup    | - No sectioning  |
++---------------+-------------------+------------------+
+
+: Comparison of imaging modalities. {#tbl-imaging}
+
+### Bootstrap-styled table (HTML)
+
+| Strain | Genotype | Phenotype | Available |
+|--------|----------|-----------|-----------|
+| Line A | +/+      | Wild-type | Yes       |
+| Line B | mut/+    | Het       | Yes       |
+| Line C | mut/mut  | Knockout  | No        |
+
+: Mouse lines with striped rows and hover effect. {.striped .hover #tbl-strains}
+
+### Column widths
+
+| Col A | Col B | Col C |
+|-------|-------|-------|
+| Wide  | Med   | Narrow|
+
+: Custom column widths. {tbl-colwidths="[50,30,20]" #tbl-widths}
+
+---
+
+## Tabsets {#sec-tabsets}
+
+### Analysis in multiple languages
+
+::: {.panel-tabset}
+
+## Python
+```python
+import numpy as np
+
+data = np.random.normal(0, 1, 1000)
+mean = np.mean(data)
+std = np.std(data)
+print(f"Mean: {mean:.3f}, Std: {std:.3f}")
+```
+
+## R
+```r
+data <- rnorm(1000, mean = 0, sd = 1)
+cat(sprintf("Mean: %.3f, Std: %.3f\n", mean(data), sd(data)))
+```
+
+## MATLAB
+```matlab
+data = randn(1000, 1);
+fprintf('Mean: %.3f, Std: %.3f\n', mean(data), std(data));
+```
+
+:::
+
+### Protocol steps
+
+::: {.panel-tabset}
+
+## Day 1: Preparation
+- Prepare solutions A and B
+- Calibrate equipment
+- Run control checks
+
+## Day 2: Recording
+- Anesthetize animal
+- Perform surgery
+- Begin recording session
+
+## Day 3: Analysis
+- Export data files
+- Run preprocessing pipeline
+- Perform statistical tests
+
+:::
+
+---
+
+## Equations {#sec-equations}
+
+### Inline math
+
+The membrane potential $V_m$ is approximately $-70$ mV at rest. The time constant is $\tau = RC$.
+
+### Display equations
+
+The Hodgkin-Huxley model describes the action potential:
+
+$$
+C_m \frac{dV}{dt} = -g_{Na} m^3 h (V - E_{Na}) - g_K n^4 (V - E_K) - g_L (V - E_L) + I_{ext}
+$$ {#eq-hh}
+
+The diffusion equation in one dimension:
+
+$$
+\frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
+$$ {#eq-diffusion}
+
+### Multiple referenced equations
+
+The signal-to-noise ratio (@eq-snr) and the Shannon entropy (@eq-entropy):
+
+$$
+\text{SNR} = \frac{\mu_{\text{signal}}}{\sigma_{\text{noise}}}
+$$ {#eq-snr}
+
+$$
+H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)
+$$ {#eq-entropy}
+
+---
+
+## Diagrams {#sec-diagrams}
+
+### Mermaid flowchart
+
+```{mermaid}
+%%| label: fig-pipeline
+%%| fig-cap: "Typical data analysis pipeline."
+flowchart LR
+  A[Raw Data] --> B[Preprocessing]
+  B --> C{Quality Check}
+  C -->|Pass| D[Analysis]
+  C -->|Fail| E[Review & Fix]
+  E --> B
+  D --> F[Visualization]
+  D --> G[Statistics]
+  F --> H[Publication]
+  G --> H
+```
+
+### Mermaid sequence diagram
+
+```{mermaid}
+%%| label: fig-protocol
+%%| fig-cap: "Experimental protocol communication flow."
+sequenceDiagram
+  participant E as Experimenter
+  participant S as Software
+  participant H as Hardware
+  E->>S: Start session
+  S->>H: Initialize DAQ
+  H-->>S: Ready
+  S-->>E: Recording started
+  loop Each trial
+    E->>S: Trigger stimulus
+    S->>H: Send TTL pulse
+    H-->>S: Data stream
+  end
+  E->>S: End session
+  S->>H: Stop acquisition
+  S-->>E: Data saved
+```
+
+### Mermaid gantt chart
+
+```{mermaid}
+%%| label: fig-timeline
+%%| fig-cap: "Project timeline."
+gantt
+  title Project Alpha Timeline
+  dateFormat YYYY-MM-DD
+  section Design
+    Literature review     :done,    d1, 2025-09-01, 30d
+    Prototype design      :done,    d2, after d1, 45d
+  section Build
+    Component sourcing    :active,  b1, 2026-01-15, 30d
+    Assembly              :         b2, after b1, 60d
+  section Testing
+    Validation            :         t1, after b2, 30d
+    Documentation         :         t2, after t1, 20d
+```
+
+### Graphviz directed graph
+
+```{dot}
+//| label: fig-architecture
+//| fig-cap: "System architecture."
+digraph G {
+  rankdir=TB;
+  node [shape=box, style="rounded,filled", fillcolor="#e8f4f8", fontname="Helvetica"];
+  edge [color="#2c5f7c"];
+
+  Sensors [fillcolor="#2c5f7c", fontcolor=white];
+  DAQ [label="Data Acquisition"];
+  Processing [label="Real-time\nProcessing"];
+  Storage [label="Data Storage"];
+  Analysis [label="Offline\nAnalysis"];
+  Viz [label="Visualization"];
+
+  Sensors -> DAQ -> Processing;
+  Processing -> Storage;
+  Storage -> Analysis;
+  Analysis -> Viz;
+  Processing -> Viz [style=dashed, label="live"];
+}
+```
+
+---
+
+## Citations and footnotes {#sec-citations}
+
+### Citations
+
+Parenthetical citation: [@einstein1905]. Narrative citation: @einstein1905 demonstrated the theory of special relativity. With locator: [see @einstein1905, p. 891]. Suppress author: [-@einstein1905].
+
+### Footnotes
+
+Standard footnote reference[^1]. Another footnote[^2].
+
+[^1]: This is a standard footnote. It appears at the bottom of the page in HTML (hover to preview) and at the bottom in PDF.
+
+[^2]: Footnotes can contain **formatting**, `code`, and even [links](https://example.com).
+
+Inline footnotes are also supported^[Like this one, defined right in the text.].
+
+---
+
+## Layout {#sec-layout}
+
+### Margin content
+
+This paragraph has an aside in the margin. [Margin notes are useful for supplementary information, definitions, or commentary that supports but doesn't interrupt the main text.]{.aside}
+
+### Column widths
+
+:::{.column-body-outset}
+This content extends slightly beyond the body text width, useful for wider figures or tables that need a bit more room.
+
+| A | B | C | D | E | F | G | H |
+|---|---|---|---|---|---|---|---|
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+
+:::
+
+:::{.column-page}
+This content extends to the full page width. Use this for wide figures, large tables, or panoramic images.
+:::
+
+### Definition list
+
+Electrophysiology
+:   The study of electrical properties of biological cells and tissues. Includes techniques such as patch-clamp recording and extracellular recording.
+
+Optogenetics
+:   A technique that uses light to control neurons that have been genetically modified to express light-sensitive ion channels.
+
+Calcium imaging
+:   A technique for measuring intracellular calcium concentration using fluorescent indicators, commonly used to infer neural activity.
+
+---
+
+## Lists {#sec-lists}
+
+### Task list
+
+- [x] Design experimental protocol
+- [x] Order components
+- [ ] Assemble hardware
+- [ ] Validate system
+- [ ] Write documentation
+
+### Nested ordered list
+
+1. Preprocessing pipeline
+   i) Motion correction
+      a. Rigid body alignment
+      b. Non-rigid registration
+   ii) Denoising
+   iii) Normalization
+2. Feature extraction
+3. Statistical analysis
+   i) Univariate tests
+   ii) Multivariate methods
+
+---
+
+## Conditional content {#sec-conditional}
+
+The following content changes depending on the output format:
+
+::: {.content-visible when-format="html"}
+**You are viewing the HTML version.** This format supports interactive features like hover citations, tabsets, search, and lightbox images.
+:::
+
+::: {.content-visible when-format="typst"}
+**You are viewing the PDF version.** This format is optimized for printing with a two-column layout and numbered sections.
+:::
+
+::: {.content-visible when-format="docx"}
+**You are viewing the Word version.** Use Track Changes to suggest edits.
+:::
+
+::: {.content-visible when-format="gfm"}
+**You are viewing the Markdown version.** This plain-text format is useful for LLM processing and version control diffs.
+:::
+
+---
+
+## Theorem environments {#sec-theorems}
+
+::: {#thm-bayes}
+## Bayes' Theorem
+For events $A$ and $B$ where $P(B) > 0$:
+
+$$
+P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)}
+$$
+:::
+
+::: {#def-entropy}
+## Shannon Entropy
+The **Shannon entropy** of a discrete random variable $X$ with possible values $\{x_1, \ldots, x_n\}$ is:
+
+$$
+H(X) = -\sum_{i=1}^{n} P(x_i) \log_2 P(x_i)
+$$
+:::
+
+::: {#lem-triangle}
+## Triangle Inequality
+For any vectors $\mathbf{u}$ and $\mathbf{v}$: $\|\mathbf{u} + \mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\|$.
+:::
+
+::: {.proof}
+## Proof of @lem-triangle
+By the Cauchy-Schwarz inequality...  *(proof omitted for brevity)*
+:::
+
+::: {#exm-poisson}
+## Poisson Distribution
+If a neuron fires at an average rate of $\lambda = 5$ spikes/s, the probability of observing $k$ spikes in a 1-second window is:
+
+$$
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+$$
+:::
+
+By @thm-bayes, we can update our beliefs given new data. The entropy defined in @def-entropy quantifies uncertainty. See @exm-poisson for a practical application.
+
+---
+
+## Shortcodes {#sec-shortcodes}
+
+### Document metadata
+
+This document is titled "{{< meta title >}}" and was last updated on {{< meta date >}}.
+
+### Keyboard shortcuts
+
+Copy: {{< kbd Ctrl-C >}} | Paste: {{< kbd Ctrl-V >}} | Save: {{< kbd Ctrl-S >}}
+
+Platform-specific: {{< kbd mac=Cmd-S win=Ctrl-S linux=Ctrl-S >}}
+
+### Page break
+
+The following inserts a page break (visible in PDF/DOCX output):
+
+{{< pagebreak >}}
+
+### Placeholder text
+
+{{< lipsum 1 >}}
+
+---
+
+## Embedded video {#sec-video}
+
+::: {.content-visible when-format="html"}
+{{< video https://www.youtube.com/watch?v=_ue8EXv8HIM title="Example embedded video" >}}
+:::
+
+::: {.content-visible unless-format="html"}
+*Video embeds are only available in the HTML version of this document.*
+:::
+
+---
+
+## Version
+
+Document version: {{< meta git-version >}}
+
+Rendered with Quarto {{< version >}}.
+
+## References

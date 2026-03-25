@@ -1,0 +1,40 @@
+---
+title: "SynaptogenEM: Overview"
+author:
+  - name: Fatima Al-Rashidi
+    affiliations:
+      - Corane Farm Research
+  - name: Lucas Moreira
+    affiliations:
+      - Corane Farm Research
+date: 2026-02-01
+---
+
+## Introduction
+
+SynaptogenEM applies correlative light and electron microscopy (CLEM) to study the ultrastructural basis of activity-dependent synaptogenesis in developing sensorimotor circuits. By combining optogenetic stimulation with serial FIB-SEM, we capture synapse formation and stabilization events at nanometer resolution and link molecular identity — reported by fluorescent markers — to structural outcome.
+
+## Goals
+
+1. Map the timeline of synapse formation in sensorimotor circuits from P5 to P21 at ultrastructural resolution
+2. Determine how patterned optogenetic activity shifts the balance between synapse formation and elimination
+3. Identify morphological signatures that predict synapse survival vs. retraction
+
+## Current status
+
+::: {.callout-tip}
+## Status: Active development
+SynaptogenEM is under active development. CLEM acquisition at P10 is complete; automated synapse classification is in progress.
+:::
+
+Correlative imaging at P5 and P10 time points is complete. We have acquired ~200 µm³ volumes per animal (n = 4 per condition) and are currently training the synapse maturation classifier on manually annotated ground truth. Optogenetic stimulation protocols have been validated in acute slice.
+
+## Related resources
+
+- [Link to code repository](https://github.com/)
+- [Link to data](https://example.com/)
+- [Related publication](/publications.qmd)
+
+## Version
+
+Document version: {{< meta git-version >}}

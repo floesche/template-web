@@ -1,0 +1,26 @@
+---
+title: Research
+format:
+    html:
+        format-links: false
+---
+
+Our lab works at the intersection of developmental neurobiology and connectomics. We use electron microscopy, in vivo physiology, and computational tools to understand how sensorimotor circuits are assembled during development and refined by activity. All projects are conducted at Corane Farm Research.
+
+## ConnectTrack
+
+ConnectTrack develops a scalable pipeline for reconstructing and tracking synaptic connectivity changes across developmental time points. Using serial FIB-SEM and automated segmentation, we map how sensorimotor circuits wire up from embryonic stages through early postnatal life — capturing which connections form, which are eliminated, and how activity shapes these decisions.
+
+**Key collaborators:** Osei Lab (Corane Farm Research), Lindgren Lab (Corane Farm Research)
+
+[Read more about the design](project-alpha/design.qmd) | [Methods](project-alpha/methods.qmd)
+
+## SynaptogenEM
+
+SynaptogenEM applies correlative light and electron microscopy (CLEM) to study the ultrastructural basis of activity-dependent synaptogenesis. We combine optogenetic stimulation with FIB-SEM to capture synapse formation and stabilization events at nanometer resolution, linking molecular identity to structural outcome.
+
+[Read more](project-beta/overview.qmd)
+
+## DevCircuit
+
+DevCircuit builds computational models of circuit assembly by integrating our connectomic datasets with in vivo activity measurements. The goal is to derive quantitative rules for synapse stabilization and elimination that generalize across circuit types and developmental stages.

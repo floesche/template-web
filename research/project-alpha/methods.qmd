@@ -1,0 +1,63 @@
+---
+title: "ConnectTrack: Methods"
+author:
+  - name: Emeka Thornton
+    orcid: 0000-0000-0000-0000
+    email: thornton@coranefarm.org
+    corresponding: true
+    affiliations:
+      - Corane Farm Research
+date: 2026-01-15
+---
+
+## Overview
+
+This document describes the experimental and computational methods used in ConnectTrack. The protocol covers tissue preparation, FIB-SEM acquisition, and the automated segmentation pipeline.
+
+## Protocol
+
+### Step 1: Tissue preparation
+
+Animals are transcardially perfused with 2.5% glutaraldehyde / 2% paraformaldehyde in 0.1 M cacodylate buffer (pH 7.4). Tissue blocks (~1 mm³) containing the target region are dissected and processed for heavy-metal staining using the OTO protocol (osmium–thiocarbohydrazide–osmium) followed by en-bloc uranyl acetate and lead aspartate staining.
+
+### Step 2: FIB-SEM acquisition
+
+Stained blocks are resin-embedded, trimmed to the region of interest, and mounted for FIB-SEM. Acquisition parameters are configured per session:
+
+```python
+# Example: loading an acquisition config and verifying voxel size
+import json
+
+with open("configs/session_001.json") as f:
+    cfg = json.load(f)
+
+assert cfg["voxel_size_nm"] == 4, "Unexpected voxel size"
+print(f"Volume: {cfg['volume_um3']} µm³  |  Estimated runtime: {cfg['runtime_h']} h")
+```
+
+### Step 3: Automated segmentation and synapse detection
+
+Raw FIB-SEM volumes are processed through the ConnectTrack segmentation stack:
+
+1. Contrast normalization and artifact masking
+2. Affinity prediction with a 3D U-Net (trained on Corane Farm Research DrosEM ground truth)
+3. Watershed segmentation and agglomeration
+4. Synapse detection with a separate classifier
+5. Connectivity graph export to HDF5
+
+::: {.callout-warning}
+## Important
+The affinity model was trained on insect tissue. Retrain or fine-tune on a small mouse ground-truth volume before applying to new species or preparation protocols.
+:::
+
+## Troubleshooting
+
+| Problem | Likely cause | Solution |
+|---------|-------------|----------|
+| Charging artefacts in FIB-SEM | Insufficient heavy-metal staining | Extend OTO incubation to 90 min |
+| High merge error rate | Low image contrast | Increase dwell time or reduce scan speed |
+| Missing synapses in dense regions | Classifier threshold too high | Lower detection threshold and re-proofread |
+
+## Version
+
+Document version: {{< meta git-version >}}

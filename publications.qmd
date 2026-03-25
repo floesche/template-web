@@ -1,0 +1,115 @@
+---
+title: Publications
+bibliography: references.bib
+---
+
+## Selected publications
+
+A curated list of key publications from the Thornton Lab. For a complete list, see Dr. Thornton's [Google Scholar](https://scholar.google.com/) profile.
+
+::: {.callout-tip}
+## Referencing papers
+This page uses a BibTeX bibliography (`references.bib`). Add your references there and cite them with `@key` syntax. For example: `@einstein1905` renders as @einstein1905.
+:::
+
+### 2025
+
+@einstein1905 — This is a placeholder entry demonstrating the citation system.
+
+### How to add references
+
+1. Add BibTeX entries to `references.bib`
+2. Cite them in any `.qmd` file with `@citationkey`
+3. The bibliography renders automatically at the bottom of pages that contain citations
+
+## Publications by friends of our lab
+
+A selection of recent work from colleagues and collaborators at other institutions.
+
+### 2026
+
+@Ahrens2026
+
+@Beyene2026
+
+@Dudman2026
+
+@EspinosaMedina2026
+
+@Harris2026
+
+@Hermundstad2026
+
+@Hess2026
+
+@Lavis2026
+
+@Li2026
+
+@LippincottSchwartz2026
+
+@LiuZhe2026
+
+@OShea2026
+
+@Pachitariu2026
+
+@Rubin2026
+
+@Satou2026
+
+@Schreiter2026
+
+@Schulze2026
+
+@Sgro2026
+
+@WongCampos2026
+
+### 2025
+
+@AguileraCastrejon2025
+
+@Aso2025
+
+@Betzig2025
+
+@Branson2025
+
+@Dennis2025
+
+@Jayaraman2025
+
+@Koay2025
+
+@Pedram2025
+
+@Reiser2025
+
+@Romani2025
+
+@Saalfeld2025
+
+@Shroff2025
+
+@Spruston2025
+
+@Tebo2025
+
+@WangMeng2025
+
+### 2024
+
+@Karpova2024
+
+@Keller2024
+
+@Otopalik2024
+
+@Voigts2024
+
+### 2020
+
+@Johnson2020
+
+## References

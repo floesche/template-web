@@ -1,0 +1,44 @@
+---
+title: Team
+---
+
+## Principal Investigator
+
+**Dr. Emeka Thornton** \
+Group Leader, Corane Farm Research \
+[ORCID](https://orcid.org/0000-0000-0000-0000) |
+[Google Scholar](https://scholar.google.com/) |
+[Email](mailto:thornton@coranefarm.org)
+
+Emeka received his PhD from Johns Hopkins University in 2012 and completed postdoctoral training at the MRC Laboratory of Molecular Biology before joining Corane Farm Research as a Group Leader in 2018. His research focuses on the developmental assembly of sensorimotor circuits and the ultrastructural basis of activity-dependent synaptic connectivity.
+
+## Postdocs
+
+**Dr. Fatima Al-Rashidi** \
+Postdoctoral researcher since 2023 \
+Working on: ConnectTrack — large-scale reconstruction of developing sensorimotor circuits using serial FIB-SEM
+
+**Dr. Lucas Moreira** \
+Postdoctoral researcher since 2024 \
+Working on: SynaptogenEM — correlative light and electron microscopy of activity-dependent synapse formation
+
+**Dr. Claire Voisin** \
+Postdoctoral researcher since 2025 \
+Working on: DevCircuit — computational modeling of synapse stabilization and elimination rules
+
+## Researchers
+
+**Søren Nielsen** \
+Research specialist since 2026 \
+FIB-SEM sample preparation and large-volume EM imaging
+
+**Yemisi Adeyinka** \
+Research specialist since 2024 \
+In vivo electrophysiology and optogenetics
+
+## Alumni
+
+| Name | Role | Years | Current position |
+|------|------|-------|-----------------|
+| Dr. Robert Cheng | Postdoc | 2019–2024 | Assistant Professor, Harvard Medical School |
+| Dr. Ingrid Solberg | Postdoc | 2020–2025 | Assistant Professor, University of Oslo |

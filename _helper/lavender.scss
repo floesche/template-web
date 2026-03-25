@@ -1,0 +1,154 @@
+/*-- scss:defaults --*/
+
+// ── Color Palette ────────────────────────────────────────────────────────────
+// Lavender — https://coolors.co/palette/9381ff-b8b8ff-f8f7ff-ffeedd-ffd8be
+
+$lab-primary:   #9381ff;  // medium purple  – main brand
+$lab-secondary: #b8b8ff;  // periwinkle     – soft accent
+$lab-accent:    #ffd8be;  // light peach    – warm accent
+$lab-highlight: #ffeedd;  // cream          – subtle highlight
+$lab-bg:        #f8f7ff;  // lavender white – page background
+
+// ── Bootstrap theme color overrides ──────────────────────────────────────────
+
+$primary:   $lab-primary;
+$secondary: $lab-secondary;
+$success:   mix($lab-primary, $lab-secondary, 50%);
+$info:      $lab-secondary;
+$warning:   darken($lab-accent, 15%);
+$light:     $lab-bg;
+$body-bg:   $lab-bg;
+
+// ── Typography ───────────────────────────────────────────────────────────────
+
+$headings-color:   darken($lab-primary, 18%);
+$link-color:       darken($lab-primary, 8%);
+$link-hover-color: darken($lab-primary, 25%);
+
+// ── Navigation ───────────────────────────────────────────────────────────────
+
+$navbar-bg: darken($lab-primary, 18%);
+$navbar-fg: mix(white, $lab-primary, 90%);
+$navbar-hl: $lab-accent;
+
+// ── Sidebar ──────────────────────────────────────────────────────────────────
+
+$sidebar-bg: mix(white, $lab-secondary, 70%);
+$sidebar-fg: darken($lab-primary, 22%);
+
+// ── Table of Contents ────────────────────────────────────────────────────────
+
+$toc-color:        darken($lab-primary, 15%);
+$toc-active-color: darken($lab-primary, 18%);
+
+// ── Inline code ──────────────────────────────────────────────────────────────
+
+$code-color: darken($lab-primary, 12%);
+
+/*-- scss:rules --*/
+
+// ── Stepped heading colors ───────────────────────────────────────────────────
+h2,
+.h2 {
+    color: darken($lab-primary, 18%);
+}
+h3,
+.h3 {
+    color: darken($lab-primary, 8%);
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+.navbar {
+    background-color: darken($lab-primary, 18%) !important;
+    border-bottom: 3px solid $lab-accent;
+}
+
+// ── Sidebar active + section headers ─────────────────────────────────────────
+.sidebar-navigation .active > a,
+.sidebar-navigation a.active {
+    color: darken($lab-primary, 18%) !important;
+    font-weight: 600;
+    border-left: 3px solid $lab-primary;
+    padding-left: calc(var(--bs-nav-link-padding-x, 1rem) - 3px);
+}
+
+.sidebar-navigation .sidebar-section .sidebar-section-item {
+    > .menu-text,
+    > a {
+        color: darken($lab-primary, 18%);
+        font-weight: 600;
+    }
+}
+
+.margin-sidebar {
+    background-color: mix(white, $lab-secondary, 70%);
+    padding: 0.5em;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+#TOC a.active,
+nav[role="doc-toc"] a.active {
+    color: darken($lab-primary, 18%);
+    font-weight: 600;
+}
+
+// ── Inline code ──────────────────────────────────────────────────────────────
+p code,
+li code,
+td code,
+th code {
+    color: darken($lab-primary, 12%);
+    background-color: rgba($lab-secondary, 0.30);
+    border-radius: 3px;
+}
+
+// ── Code blocks ──────────────────────────────────────────────────────────────
+pre.sourceCode {
+    border-left: 3px solid rgba($lab-primary, 0.45);
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+thead th {
+    background-color: rgba($lab-secondary, 0.30);
+}
+
+// ── Callout tweaks ───────────────────────────────────────────────────────────
+div.callout-caution.callout {
+    border-left-color: darken($lab-accent, 20%);
+    > .callout-header {
+        background-color: rgba($lab-accent, 0.35);
+        color: darken($lab-accent, 35%);
+    }
+}
+
+div.callout-note.callout {
+    > .callout-header {
+        background-color: rgba($lab-primary, 0.12);
+    }
+}
+
+div.callout-tip.callout {
+    > .callout-header {
+        background-color: rgba($lab-secondary, 0.30);
+    }
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+.nav-footer {
+    background-color: rgba($lab-secondary, 0.20);
+    border-top: 1px solid rgba($lab-primary, 0.20);
+}
+
+// ── Back-to-top button ───────────────────────────────────────────────────────
+#back-to-top {
+    color: darken($lab-primary, 18%);
+    &:hover {
+        color: darken($lab-primary, 8%);
+    }
+}
+
+// ── Buttons (primary) ────────────────────────────────────────────────────────
+.btn-primary:hover,
+.btn-primary:focus {
+    border-bottom-color: $lab-accent;
+}
