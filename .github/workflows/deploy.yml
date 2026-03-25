@@ -48,7 +48,7 @@ jobs:
 
       - name: Render site
         timeout-minutes: 30
-        run: stdbuf -oL -eL pixi run render -- --log-level debug 2>&1 | tee render.log
+        run: stdbuf -oL -eL pixi run render -- --log-level info 2>&1 | tee render.log
 
       - name: Upload render log
         if: always()
