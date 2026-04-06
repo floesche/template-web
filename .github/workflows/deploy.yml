@@ -47,18 +47,18 @@ jobs:
           restore-keys: quarto-freeze-
 
       - name: Create render log
-        run: touch render.log
+        run: touch render-output.txt
 
       - name: Render site
         timeout-minutes: 30
-        run: stdbuf -oL -eL pixi run render -- --log-level info 2>&1 | tee render.log
+        run: stdbuf -oL -eL pixi run render -- --log-level info 2>&1 | tee render-output.txt
 
       - name: Upload render log
         if: always()
         uses: actions/upload-artifact@v5
         with:
           name: render-log
-          path: render.log
+          path: render-output.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
