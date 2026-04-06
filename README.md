@@ -2,7 +2,7 @@
 
 A [Quarto](https://quarto.org/)-based template for building static scientific lab and project websites. Renders to HTML (GitHub Pages), PDF (via Typst), MS Word, and GitHub Flavored Markdown.
 
-All dependencies are managed through [pixi](https://pixi.sh/), so no manual installation of Quarto or other tools is required.
+All dependencies are managed through [pixi](https://pixi.sh/), so no manual installation of Quarto or other tools is required. If you get stuck, see [Getting help from an LLM](#getting-help-from-an-llm) below.
 
 ## Quick start
 
@@ -23,7 +23,7 @@ powershell -ExecutionPolicy Bypass -c "irm -useb https://pixi.sh/install.ps1 | i
 **Linux** or **macOS**: open a terminal and run:
 
 ```bash
-curl -fsSL https://pixi.sh/install.sh | bash
+curl -fsSL https://pixi.sh/install.sh | sh
 ```
 
 After installation, **close and reopen your terminal** so the `pixi` command is available.
