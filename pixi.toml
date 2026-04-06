@@ -15,3 +15,4 @@ clean = { cmd = "python -c \"import pathlib, shutil; [p.unlink() for p in pathli
 [dependencies]
 quarto = ">=1.5.57,<2"
 jupyter = ">=1.1.1,<2"
+dart-sass = ">=1.98.0,<2"

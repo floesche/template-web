@@ -8,6 +8,16 @@ All dependencies are managed through [pixi](https://pixi.sh/) — no manual inst
 
 ### 1. Install pixi
 
+While I recommend to follow the installation instructions from the pixi website, here the most basic steps for the different operating systems:
+
+If you have **Windows**, open a PowerShell terminal and run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm -useb https://pixi.sh/install.ps1 | iex"
+```
+
+If you have **Linux** or **macOS**, open a terminal and run:
+
 ```bash
 curl -fsSL https://pixi.sh/install.sh | bash
 ```
@@ -122,3 +132,4 @@ pixi add pandas seaborn matplotlib
 ```
 
 All dependencies are recorded in `pixi.toml` and pinned in `pixi.lock`.
+p
