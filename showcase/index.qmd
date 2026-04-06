@@ -26,10 +26,7 @@ format:
     footnotes-hover: true
     crossrefs-hover: true
     code-copy: hover
-  typst:
-    columns: 1
-  docx: default
-  gfm: default
+format-links: false
 ---
 
 {{< include _showcase-body.qmd >}}
