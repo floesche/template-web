@@ -28,27 +28,45 @@ curl -fsSL https://pixi.sh/install.sh | sh
 
 After installation, **close and reopen your terminal** so the `pixi` command is available.
 
-### 2. Clone and preview
+### 2. Create your own copy
 
-First, navigate to the folder where you want to store the project. For example:
+This repository is a **GitHub template**. Instead of cloning it directly, first create your own copy:
 
-```bash
-cd ~/Documents        # or any folder you prefer
-```
+1. Go to [github.com/floesche/template-web](https://github.com/floesche/template-web)
+2. Click the green **"Use this template"** button (top-right) and choose **"Create a new repository"**
+3. Enter a name for your repository (e.g., `my-lab-website`) and click **"Create repository"**
 
-Then clone the repository and start the preview:
+You now have your own repository at `https://github.com/yourusername/my-lab-website`.
 
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+### 3. Clone and preview
+
+Navigate to the folder where you want to store the project, then clone **your copy** (replace the URL with your own repository's URL from the previous step):
+
+**Windows (PowerShell):**
+
+```powershell
+cd ~\Documents
+git clone https://github.com/yourusername/my-lab-website.git
+cd my-lab-website
 pixi run preview
 ```
 
-This installs all dependencies automatically on the first run and opens a live-reloading preview at `http://localhost:8000`.
+**Linux / macOS:**
 
-> **Troubleshooting:** Always use `pixi run preview` (not `quarto preview` directly). pixi sets up the correct environment with all required tools. If you see errors about missing tools or paths, make sure you are running commands through pixi.
+```bash
+cd ~/Documents
+git clone https://github.com/yourusername/my-lab-website.git
+cd my-lab-website
+pixi run preview
+```
 
-### 3. Build the site
+> **Note:** The first run takes a few minutes because pixi downloads and installs all dependencies (Quarto, Python, dart-sass, etc.) automatically. Subsequent runs are fast.
+
+This opens a live-reloading preview at `http://localhost:8000`.
+
+> **Troubleshooting:** Always use `pixi run preview` (not `quarto preview` directly). pixi sets up the correct environment with all required tools. If you see errors about missing tools or paths, make sure you are running commands through pixi. See [Windows troubleshooting](#windows-troubleshooting) below for platform-specific issues.
+
+### 4. Build the site
 
 ```bash
 pixi run render
@@ -180,6 +198,19 @@ pixi add pandas seaborn matplotlib
 ```
 
 All dependencies are recorded in `pixi.toml` and pinned in `pixi.lock`.
+
+## Windows troubleshooting
+
+### "Theme file compilation failed" error
+
+If you see a "Theme file compilation failed" error on Windows, try deleting the `.pixi` folder and reinstalling:
+
+```powershell
+Remove-Item -Recurse -Force .pixi
+pixi run preview
+```
+
+This project's `pixi.toml` includes a workaround for a [known Windows issue](https://github.com/quarto-dev/quarto-cli/issues/6651) in the conda-packaged Quarto. The issue is fixed upstream in Quarto 1.9.23 and the workaround will be removed once that version is available through conda-forge.
 
 ## Getting help from an LLM
 

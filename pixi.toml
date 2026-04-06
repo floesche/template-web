@@ -16,3 +16,10 @@ clean = { cmd = "python _helper/cleanup.py && python -c \"import shutil; shutil.
 quarto = ">=1.5.57,<2"
 jupyter = ">=1.1.1,<2"
 dart-sass = ">=1.98.0,<2"
+
+# The quarto conda package's activation script on Windows incorrectly sets
+# QUARTO_DART_SASS to sass.bat, but the dart-sass package installs sass.exe.
+# Override it here so Quarto finds the native binary.
+# See: https://github.com/quarto-dev/quarto-cli/issues/6651
+[target.win-64.activation.env]
+QUARTO_DART_SASS = "%CONDA_PREFIX%\\Library\\bin\\sass.exe"
